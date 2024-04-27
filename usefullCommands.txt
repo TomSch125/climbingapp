@@ -1,0 +1,4 @@
+SHOW TABLES;
+DESCRIBE User; #Shows schema from certain tables
+
+\connect root@localhost
