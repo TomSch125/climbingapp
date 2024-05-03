@@ -7,6 +7,10 @@ public class Location {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "owner_id", referencedColumnName = "id")
+    private User owner;
     @Column(unique=true)
     private String name;
 
@@ -15,6 +19,8 @@ public class Location {
 
     @Column(unique=true)
     private String phone_number;
+
+    private Boolean isGym;
 
     private Double latitude;
 
@@ -66,5 +72,21 @@ public class Location {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public Boolean getGym() {
+        return isGym;
+    }
+
+    public void setGym(Boolean gym) {
+        isGym = gym;
     }
 }
