@@ -46,4 +46,11 @@ public class GymRatingId implements Serializable {
         return Objects.equals( user, pk.user ) &&
                 Objects.equals( gym, pk.gym );
     }
+
+    @Override
+    public int hashCode() {
+        Integer uId = user.getId();
+        Integer lId = gym.getId();
+        return Objects.hash( uId, lId );
+    }
 }

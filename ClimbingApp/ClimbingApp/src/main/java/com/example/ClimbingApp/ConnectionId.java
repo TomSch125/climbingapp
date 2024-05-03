@@ -44,4 +44,11 @@ public class ConnectionId implements Serializable {
         return Objects.equals( user, pk.user ) &&
                 Objects.equals( friend, pk.friend );
     }
+
+    @Override
+    public int hashCode() {
+        Integer uId = user.getId();
+        Integer fId = friend.getId();
+        return Objects.hash( uId, fId );
+    }
 }

@@ -41,4 +41,11 @@ public class PortfolioId implements Serializable {
         return Objects.equals( user, pk.user ) &&
                 Objects.equals( climb, pk.climb );
     }
+
+    @Override
+    public int hashCode() {
+        Integer uId = user.getId();
+        Integer cId = climb.getId();
+        return Objects.hash( uId, cId );
+    }
 }

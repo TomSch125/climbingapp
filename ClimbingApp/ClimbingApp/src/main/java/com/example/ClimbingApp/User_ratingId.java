@@ -40,4 +40,11 @@ public class User_ratingId implements Serializable {
         return Objects.equals( user, pk.user ) &&
                 Objects.equals( route, pk.route );
     }
+
+    @Override
+    public int hashCode() {
+        Integer uId = user.getId();
+        Integer rId = route.getId();
+        return Objects.hash( uId, rId );
+    }
 }

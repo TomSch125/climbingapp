@@ -40,4 +40,11 @@ public class H_B_LinkId implements Serializable {
         return Objects.equals( beta, pk.beta ) &&
                 Objects.equals( hold, pk.hold );
     }
+
+    @Override
+    public int hashCode() {
+        Integer hId = hold.getId();
+        Integer bId = beta.getId();
+        return Objects.hash( hId, bId );
+    }
 }
