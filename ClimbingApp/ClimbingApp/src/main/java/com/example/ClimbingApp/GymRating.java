@@ -3,6 +3,7 @@ package com.example.ClimbingApp;
 import jakarta.persistence.*;
 
 @Entity
+@IdClass(GymRatingId.class)
 public class GymRating {
     @Id
     @ManyToOne(cascade = CascadeType.ALL)

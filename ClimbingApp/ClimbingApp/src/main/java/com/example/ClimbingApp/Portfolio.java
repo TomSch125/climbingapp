@@ -2,6 +2,7 @@ package com.example.ClimbingApp;
 import jakarta.persistence.*;
 
 @Entity // This tells Hibernate to make a table out of this class
+@IdClass(PortfolioId.class)
 public class Portfolio {
 
     @Id

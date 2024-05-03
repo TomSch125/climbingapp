@@ -8,6 +8,10 @@ public class Climb {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "route_id", referencedColumnName = "id")
     private Route route;

@@ -3,6 +3,7 @@ package com.example.ClimbingApp;
 import jakarta.persistence.*;
 
 @Entity
+@IdClass(H_B_LinkId.class)
 public class H_B_Link {
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
