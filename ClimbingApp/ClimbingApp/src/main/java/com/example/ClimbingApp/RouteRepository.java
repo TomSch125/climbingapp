@@ -1,7 +1,7 @@
 package com.example.ClimbingApp;
 
 import org.springframework.data.repository.CrudRepository;
-
-public interface RouteRepository extends CrudRepository<User, Integer> {
+import com.example.ClimbingApp.Route;
+public interface RouteRepository extends CrudRepository<Route, Integer> {
 
 }
