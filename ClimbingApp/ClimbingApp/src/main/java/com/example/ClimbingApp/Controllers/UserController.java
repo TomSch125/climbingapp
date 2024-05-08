@@ -1,4 +1,4 @@
-package com.example.ClimbingApp;
+package com.example.ClimbingApp.Controllers;
 import com.example.ClimbingApp.Entities.Connection;
 import com.example.ClimbingApp.Entities.User;
 import com.example.ClimbingApp.Repos.ConnectionRepository;
@@ -26,14 +26,14 @@ public class UserController {
 
     @PostMapping(path="/register") // Map ONLY POST Requests
     public @ResponseBody String addNewUser (@RequestParam String name
-            , @RequestParam String email, @RequestParam Integer privilege, @RequestParam String passwoed) {
+            , @RequestParam String email, @RequestParam Integer privilege, @RequestParam String password) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
         User n = new User();
         n.setName(name);
         n.setEmail(email);
         n.setPrivilege(privilege);
-        n.setPassword(passwoed);
+        n.setPassword(password);
         userRepository.save(n);
         return "Saved";
     }
