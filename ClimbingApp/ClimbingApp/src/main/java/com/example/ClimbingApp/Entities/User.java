@@ -1,15 +1,17 @@
-package com.example.ClimbingApp;
+package com.example.ClimbingApp.Entities;
 import jakarta.persistence.*;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class User {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
     @Column(unique=true)
     private String name;
     @Column(unique=true)
     private String email;
+
+    private String password;
 
     private Integer privilege;
 
@@ -43,5 +45,13 @@ public class User {
 
     public void setPrivilege(Integer privilege) {
         this.privilege = privilege;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

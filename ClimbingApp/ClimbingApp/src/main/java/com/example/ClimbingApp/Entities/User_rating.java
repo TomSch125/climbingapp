@@ -1,16 +1,20 @@
-package com.example.ClimbingApp;
+package com.example.ClimbingApp.Entities;
 
+import com.example.ClimbingApp.Entities.Route;
+import com.example.ClimbingApp.Entities.User;
 import jakarta.persistence.*;
 
 @Entity // This tells Hibernate to make a table out of this class
-@IdClass(User_ratingId.class)
+//@IdClass(User_ratingId.class)
 public class User_rating {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer id;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
-    @Id
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "route_id", referencedColumnName = "id")
     private Route route;
@@ -40,5 +44,13 @@ public class User_rating {
 
     public void setRating(double rating) {
         this.rating = rating;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

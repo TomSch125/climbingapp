@@ -1,4 +1,4 @@
-package com.example.ClimbingApp;
+package com.example.ClimbingApp.Entities;
 
 import jakarta.persistence.*;
 

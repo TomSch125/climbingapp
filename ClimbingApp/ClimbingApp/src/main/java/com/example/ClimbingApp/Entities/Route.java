@@ -1,5 +1,6 @@
-package com.example.ClimbingApp;
+package com.example.ClimbingApp.Entities;
 
+import com.example.ClimbingApp.Entities.Location;
 import jakarta.persistence.*;
 
 @Entity
